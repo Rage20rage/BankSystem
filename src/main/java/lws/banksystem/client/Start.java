@@ -1,5 +1,4 @@
 package lws.banksystem.client;
-
 import lws.banksystem.client.view.Login;
 import lws.banksystem.client.view.View;
 import lws.banksystem.client.view.home;
