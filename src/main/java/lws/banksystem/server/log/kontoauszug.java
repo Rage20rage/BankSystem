@@ -1,8 +1,4 @@
 package lws.banksystem.server.log;
-/*
-public class kontoauszug {
-}*/
-
 import java.io.File;
 import java.io.*;
 import java.time.LocalDate;
@@ -27,7 +23,7 @@ public class kontoauszug {
         }
     }
 
-    public static void PostBoxCreateold(String accountnum) throws Exception {
+    /*public static void PostBoxCreateold(String accountnum) throws Exception {
         File file = new File(accountnum + "old");
         file.setReadOnly();
         //Create the file
@@ -42,7 +38,7 @@ public class kontoauszug {
             System.out.println("File already exists.");
 
         }
-    }
+    }*/// nicht nötig
 
 
     public static String CreatSkeleton() {
