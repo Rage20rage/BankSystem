@@ -91,7 +91,7 @@ public class NetworkHandler extends Object {
             Logger.log("Warte auf Daten...");
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             message = reader.readLine();
-            Crypter.getInstance().getGenerator().getDecryptMessage(message,Network.otherPublicKey);
+            message = Crypter.getInstance().getGenerator().getDecryptMessage(message,Network.otherPublicKey);
             Logger.log("Daten bekommen: " + message);
         } catch (IOException e) {
             e.printStackTrace();

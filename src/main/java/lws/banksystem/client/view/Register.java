@@ -70,7 +70,7 @@ public class Register implements View {
             }
             return;
         } else { //------------------------------------------------------------------------------------------------------------------------------
-            String firstName = ((JTextField) ui.get("firstName").getComponent()).getText(); //Bitte Variable definieren (aus dem passendem TextFeld
+            String firstName = ((JTextField) ui.get("firstName").getComponent()).getText(); //Bitte Variable definieren aus dem passendem TextFeld
             String lastName = ((JTextField) ui.get("lastName").getComponent()).getText(); //Bitte Variable definieren (aus dem passendem TextFeld
             String mail = ((JTextField) ui.get("mail").getComponent()).getText(); //Bitte Variable definieren (aus dem passendem TextFeld
             String birthdate = ((JTextField) ui.get("birthdate").getComponent()).getText(); //Bitte Variable definieren (aus dem passendem TextFeld
@@ -81,7 +81,9 @@ public class Register implements View {
             String password = ((JTextField) ui.get("password").getComponent()).getText(); //Bitte Variable definieren (aus dem passendem TextFeld
             int response = Network.register(firstName, lastName, mail, birthdate, street, houseNumber, city, zipCode, password);
             if (response > 0) {
-                JOptionPane.showMessageDialog(null, "Sie haben sich erfolgreich Regestriert");//Zeigt "Erfolgreich registriert Meldung. Die ID ist der String "response".
+                JOptionPane.showMessageDialog(null, "Sie haben sich erfolgreich Regestriert \n" +
+                        "Ihre ID lautet:"+response);//Zeigt "Erfolgreich registriert Meldung. Die ID ist der String "response".
+
             } else {
                 JOptionPane.showMessageDialog(null, "Serververbindungfehlgeschlagen");//Serverfehler: "InternalServerError"
             }

@@ -21,12 +21,12 @@ public class Home implements View, ActionListener {
         //ui.put("titel",new UiContainer(new JTextPane(Test1.t));
         ui.put("Balence-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
 
-        JTextArea textArea1 =new JTextArea("1265.56");
+        JTextArea textArea1 =new JTextArea(Network.getBalance());
         textArea1.setEditable(false);
         ui.put("texterea-", new UiContainer(textArea1, 1, 1));
 
         ui.put("username-label", new UiContainer(new JLabel("Nutzername:"), 0, 2));
-        JTextArea textArea2 =new JTextArea("Dein Name");
+        JTextArea textArea2 =new JTextArea(Network.getUsername());
         textArea2.setEditable(false);
         ui.put("username", new UiContainer(textArea2, 1, 2));
 
@@ -45,7 +45,9 @@ public class Home implements View, ActionListener {
 
         JButton logout = new JButton("Auslogen");
         logout.addActionListener(this);
-        ui.put("payOutMoney-button", new UiContainer(logout, 2, 4));
+        ui.put("logout", new UiContainer(logout, 2, 4));
+
+
 
 
     }

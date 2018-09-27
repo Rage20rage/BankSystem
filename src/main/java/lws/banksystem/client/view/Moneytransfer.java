@@ -2,6 +2,8 @@ package lws.banksystem.client.view;
 
 import lws.banksystem.client.Window;
 import lws.banksystem.client.model.UiContainer;
+import lws.banksystem.client.network.Network;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +21,7 @@ import java.util.function.BiConsumer;
             this.callBack = callBack;
 
             ui.put("account-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
-            JTextArea textArea2 =new JTextArea("1256,65");
+            JTextArea textArea2 =new JTextArea(Network.getBalance());
             textArea2.setEditable(false);
             ui.put("texterea-balance", new UiContainer(textArea2, 1, 1));
 
