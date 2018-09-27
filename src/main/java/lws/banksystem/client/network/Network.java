@@ -116,8 +116,11 @@ public class Network {
         handler.disconnect();
     }
 
-    public static String getUsername() {
-        String username = "";
+    public static String[] getUsername() {
+        String[] username = new String[2];
+        handler.send("Konto-Username");
+        username[0] = handler.recive();
+        username[1] = handler.recive();
         return username;
     }
 

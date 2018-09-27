@@ -139,4 +139,16 @@ public class MySQL {
         return NetworkResponse.allow;
     }
 
+    public static String[] getUser(String id) {
+        String[] user = new String[2];
+        ResultSet rs = SQLHandler.getResultSet("SELECT * FROM `Accounts` WHERE `ID`='"+id+"'");
+        try {
+            user[0] = rs.getString("Vorname");
+            user[1] = rs.getString("Nachname");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
 }

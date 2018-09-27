@@ -94,6 +94,12 @@ public class Action {
                 NetworkHandler.send(connection, "Transfer-ERROR");
                 NetworkHandler.disconnect(connection);
             }
+        } else if(action.equals("Konto-Username")) {
+            String[] user = new String[2];
+            user = MySQL.getUser(connection.id);
+            NetworkHandler.send(connection, user[0]);
+            try { Thread.sleep(100); } catch (InterruptedException e) { e.printStackTrace(); }
+            NetworkHandler.send(connection, user[1]);
         } else {
             try { Thread.sleep(5000); } catch (InterruptedException e) { e.printStackTrace(); }
             NetworkHandler.send(connection, "NO-Action");
