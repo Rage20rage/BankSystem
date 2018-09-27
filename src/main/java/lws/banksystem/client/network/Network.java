@@ -4,6 +4,7 @@ import lws.banksystem.client.cryption.SHA512;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.ArrayList;
 
 public class Network {
 
@@ -119,5 +120,12 @@ public class Network {
         String username = "";
         return username;
     }
+
+    public static ArrayList<String> getLog() {
+        ArrayList<String> log = new ArrayList<>();
+        return log;
+    }
+
+    
 
 }
