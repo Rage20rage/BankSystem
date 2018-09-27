@@ -20,7 +20,7 @@ public class Home implements View, ActionListener {
         this.callBack = callBack;
         //ui.put("titel",new UiContainer(new JTextPane(Test1.t));
         ui.put("Balence-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
-
+        
         JTextArea textArea1 =new JTextArea(Network.getBalance());
         textArea1.setEditable(false);
         ui.put("texterea-", new UiContainer(textArea1, 1, 1));
