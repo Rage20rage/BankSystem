@@ -18,12 +18,17 @@ public class home implements View, ActionListener {
 
     public home(BiConsumer<String, HashMap<String, String>> callBack) {
         this.callBack = callBack;
+        //ui.put("titel",new UiContainer(new JTextPane(Test1.t));
+        ui.put("Balence-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
 
-        ui.put("id-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
-        ui.put("id", new UiContainer(new JTextArea(Network.getBalance()), 1, 1));
+        JTextArea textArea1 =new JTextArea("1265.56");
+        textArea1.setEditable(false);
+        ui.put("texterea-", new UiContainer(textArea1, 1, 1));
 
         ui.put("username-label", new UiContainer(new JLabel("Nutzername:"), 0, 2));
-        ui.put("Kontoauszug-", new UiContainer(new JTextArea(), 1, 2));
+        JTextArea textArea2 =new JTextArea("Dein Name");
+        textArea2.setEditable(false);
+        ui.put("username", new UiContainer(textArea2, 1, 2));
 
 
         JButton history = new JButton("Verlauf");
@@ -48,7 +53,7 @@ public class home implements View, ActionListener {
     /*private void handeltransfer(ActionEvent actionEvent) {
         System.out.println("Das ist der Handle Transfer!");
 
-    }*/
+    }
 
     private void handelpayOutMoneyDeposit(ActionEvent actionEvent) {
 
@@ -57,7 +62,7 @@ public class home implements View, ActionListener {
     private void handelhistory(ActionEvent actionEvent) {
 
 
-    }
+    }*/
 
     @Override
     public JPanel getJPanel() {
@@ -83,6 +88,9 @@ public class home implements View, ActionListener {
 
         if (ae.getSource() == this.ui.get("depositMoney-button").getComponent()) {
             Window.getInstance().applyView(new moneychangers(callBack));
+        }
+        if (ae.getSource() == this.ui.get("transfer-button").getComponent()) {
+            Window.getInstance().applyView(new moneytransfer(callBack));
         }
         if(ae.getSource()==this.ui.get("logout").getComponent()){
             Network.logout();

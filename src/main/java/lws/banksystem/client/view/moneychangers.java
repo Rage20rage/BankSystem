@@ -23,8 +23,13 @@ import java.util.function.BiConsumer;
         public moneychangers(BiConsumer<String, HashMap<String, String>> callBack) {
             System.out.println("Der Knopf geht!");
             this.callBack = callBack;
+
             ui.put("id-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
-            ui.put("Kontostand" , new UiContainer(new JTextArea(/*Network.getBalance()*/),1, 1));
+            JTextArea textArea2 =new JTextArea("1256,65");
+            textArea2.setEditable(false);
+            ui.put("texterea-balance", new UiContainer(textArea2, 1, 1));
+
+
             JRadioButton radioButton1= new JRadioButton("Geld einzahlen:");
             ui.put("checkbox-in", new UiContainer(radioButton1, 0, 2));
             radioButton1.addActionListener(this::actionPerformed);
@@ -96,6 +101,9 @@ import java.util.function.BiConsumer;
             }
             if (ae.getSource() == this.ui.get("homescren-button").getComponent()) {
                 Window.getInstance().applyView(new home(callBack));
+            }
+            if (ae.getSource() == this.ui.get("toRun-button").getComponent()){
+                //dann geld über / einzahlen funktion
             }
         }
     }
