@@ -43,9 +43,10 @@ public class MySQL {
 
 
     private static int getAviableID()  {
-        ResultSet rs = SQLHandler.getResultSet("SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_NAME ='Accounts'");
+        ResultSet rs = SQLHandler.getResultSet("SELECT `AUTO_INCREMENT` FROM information_schema.TABLES WHERE TABLE_NAME ='Accounts'");
         try {
-            return rs.getInt(0);
+            rs.next();
+            return rs.getInt(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
