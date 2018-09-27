@@ -1,3 +1,7 @@
+package lws.banksystem.server.log;
+/*
+public class kontoauszug {
+}*/
 
 import java.io.File;
 import java.io.*;
@@ -6,7 +10,6 @@ import java.time.LocalDate;
 
 public class kontoauszug {
     public static LocalDate dateTime = LocalDate.now();
-    ;
 
     public static void PostBoxCreatenew(String accountnum) throws Exception {
         File file = new File(accountnum + "new");
@@ -98,19 +101,6 @@ public class kontoauszug {
             e.printStackTrace();
         }
     }
-
-
-    /*public static boolean ReadAccontData(String accountnum) throws IOException {
-        String name = accountnum + "new";
-        FileReader filer = new FileReader(name);
-        char[] a = new char[filer.read()];
-        filer.read(a);
-        for (char c : a) {
-            System.out.print(c);
-        }
-        filer.close();
-        return true;
-    }*/
     public static void ReadAccontData(String accountnum) throws IOException {
         String name = accountnum + "new";
         FileReader filer = new FileReader(name);
@@ -167,7 +157,7 @@ public class kontoauszug {
     }
 
 
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         System.out.println(CreatSkeleton());
         //PostBoxCreatenew("2");
         //PostBoxCreatenew("1");
@@ -181,8 +171,8 @@ public class kontoauszug {
         //Datamoving("2");
         //ReadAccontDataold("1");
 
-
-    }
+        // nur test zwike
+    }*/
 
 
 }
