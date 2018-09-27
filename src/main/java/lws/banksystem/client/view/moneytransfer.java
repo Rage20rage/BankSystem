@@ -18,12 +18,12 @@ import java.util.function.BiConsumer;
         public  moneytransfer(BiConsumer<String, HashMap<String, String>> callBack) {
             this.callBack = callBack;
 
-            ui.put("konto-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
+            ui.put("account-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
             JTextArea textArea2 =new JTextArea("1256,65");
             textArea2.setEditable(false);
             ui.put("texterea-balance", new UiContainer(textArea2, 1, 1));
 
-            ui.put("betrag-label", new UiContainer(new JLabel("Tragen sie hier den Betrag ein den sie Überwiesen möchten:"), 0, 2));
+            ui.put("amount-label", new UiContainer(new JLabel("Tragen sie hier den Betrag ein den sie Überwiesen möchten:"), 0, 2));
             ui.put("Überwieungsbetrag" , new UiContainer(new JTextField(),1,2));
 
             ui.put("anwen-label", new UiContainer(new JLabel("Tragen sie hier den begünstigten ein"), 0, 3));
