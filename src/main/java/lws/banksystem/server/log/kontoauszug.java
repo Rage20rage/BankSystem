@@ -96,17 +96,6 @@ public class kontoauszug {
         }
     }
 
-    /*public static boolean ReadAccontData(String accountnum) throws IOException {
-        String name = accountnum + "new";
-        FileReader filer = new FileReader(name);
-        char[] a = new char[filer.read()];
-        filer.read(a);
-        for (char c : a) {
-            System.out.print(c);
-        }
-        filer.close();
-        return true;
-    }*/
     public static void ReadAccontData(String accountnum) throws IOException {
         String name = accountnum + "new";
         FileReader filer = new FileReader(name);
