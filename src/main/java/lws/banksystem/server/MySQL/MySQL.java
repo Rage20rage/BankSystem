@@ -1,9 +1,7 @@
 package lws.banksystem.server.MySQL;
 
-import lws.banksystem.client.network.Network;
 import lws.banksystem.client.network.NetworkResponse;
 import lws.banksystem.server.log.Logger;
-import sun.nio.ch.Net;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
