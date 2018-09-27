@@ -1,8 +1,6 @@
 package lws.banksystem.client;
 import lws.banksystem.client.view.Login;
 import lws.banksystem.client.view.View;
-import lws.banksystem.client.view.home;
-import lws.banksystem.client.view.moneychangers;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -16,11 +14,8 @@ public class Start {
     private BiConsumer<String, HashMap<String, String>> callBack = (s, values) -> changeApplicationState(s, values);
 
     private Start() {
-<<<<<<< HEAD
         Window.getInstance().applyView(new Login(   callBack));
-=======
         Window.getInstance().applyView(new Login(callBack));
->>>>>>> 0303411042e0bb80b84caf12bea66f1029fbfc91
     }
 
     private void changeApplicationState(String state, HashMap<String, String> values){

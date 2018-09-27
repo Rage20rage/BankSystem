@@ -11,12 +11,12 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.function.BiConsumer;
 
-public class home implements View, ActionListener {
+public class Home implements View, ActionListener {
 
     private HashMap<String, UiContainer> ui = new HashMap<>();
     BiConsumer<String, HashMap<String, String>> callBack;
 
-    public home(BiConsumer<String, HashMap<String, String>> callBack) {
+    public Home(BiConsumer<String, HashMap<String, String>> callBack) {
         this.callBack = callBack;
         //ui.put("titel",new UiContainer(new JTextPane(Test1.t));
         ui.put("Balence-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
@@ -87,10 +87,10 @@ public class home implements View, ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         if (ae.getSource() == this.ui.get("depositMoney-button").getComponent()) {
-            Window.getInstance().applyView(new moneychangers(callBack));
+            Window.getInstance().applyView(new Moneychangers(callBack));
         }
         if (ae.getSource() == this.ui.get("transfer-button").getComponent()) {
-            Window.getInstance().applyView(new moneytransfer(callBack));
+            Window.getInstance().applyView(new Moneytransfer(callBack));
         }
         if(ae.getSource()==this.ui.get("logout").getComponent()){
             Network.logout();

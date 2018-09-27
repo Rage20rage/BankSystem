@@ -11,11 +11,11 @@ import java.util.HashMap;
 import java.util.function.BiConsumer;
 
 
-    public class moneytransfer implements View , ActionListener {
+    public class Moneytransfer implements View , ActionListener {
         private HashMap<String, UiContainer> ui = new HashMap<>();
         BiConsumer<String, HashMap<String, String>> callBack;
 
-        public  moneytransfer(BiConsumer<String, HashMap<String, String>> callBack) {
+        public Moneytransfer(BiConsumer<String, HashMap<String, String>> callBack) {
             this.callBack = callBack;
 
             ui.put("account-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
@@ -65,7 +65,7 @@ import java.util.function.BiConsumer;
         public void actionPerformed(ActionEvent ae) {
 
             if (ae.getSource() == this.ui.get("homescren-button").getComponent()) {
-                Window.getInstance().applyView(new home(callBack));
+                Window.getInstance().applyView(new Home(callBack));
             }
             if (ae.getSource() == this.ui.get("toRun-button").getComponent()){
                 //dann geld über / einzahlen funktion

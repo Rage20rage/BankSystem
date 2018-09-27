@@ -36,7 +36,7 @@ public class Login implements View, ActionListener {
 
         JButton home1 = new JButton("Home");
         home1.addActionListener(this);
-        ui.put("home-button1",new UiContainer(home1, 1,7));
+        ui.put("Home-button1",new UiContainer(home1, 1,7));
 
 
     }
@@ -69,8 +69,8 @@ public class Login implements View, ActionListener {
             Window.getInstance().applyView(new Register(callBack));
 
             }
-            if(ae.getSource()== this.ui.get("home-button1").getComponent()){
-                Window.getInstance().applyView(new home(callBack));
+            if(ae.getSource()== this.ui.get("Home-button1").getComponent()){
+                Window.getInstance().applyView(new Home(callBack));
             }
 
 

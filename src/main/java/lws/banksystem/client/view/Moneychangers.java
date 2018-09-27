@@ -2,25 +2,20 @@ package lws.banksystem.client.view;
 
 import lws.banksystem.client.Window;
 import lws.banksystem.client.model.UiContainer;
-import lws.banksystem.client.network.Network;
 
 import javax.swing.*;
-import java.applet.Applet;
-import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.function.BiConsumer;
 
 
-    public class moneychangers implements View , ActionListener {
+    public class Moneychangers implements View , ActionListener {
         private HashMap<String, UiContainer> ui = new HashMap<>();
         BiConsumer<String, HashMap<String, String>> callBack;
 
-        public moneychangers(BiConsumer<String, HashMap<String, String>> callBack) {
+        public Moneychangers(BiConsumer<String, HashMap<String, String>> callBack) {
             System.out.println("Der Knopf geht!");
             this.callBack = callBack;
 
@@ -100,7 +95,7 @@ import java.util.function.BiConsumer;
                 }
             }
             if (ae.getSource() == this.ui.get("homescren-button").getComponent()) {
-                Window.getInstance().applyView(new home(callBack));
+                Window.getInstance().applyView(new Home(callBack));
             }
             if (ae.getSource() == this.ui.get("toRun-button").getComponent()){
                 //dann geld über / einzahlen funktion
