@@ -1,4 +1,5 @@
 package lws.banksystem.server.log;
+
 import java.io.File;
 import java.io.*;
 import java.time.LocalDate;
@@ -43,7 +44,7 @@ public class kontoauszug {
 
     public static String CreatSkeleton() {
         //heir DB verbendung
-        String name = "Adnan Almsuker";
+        String name = "Adnan Almsuker";//konto inhaber name kommt hier
         String acc_num = "1234";
         String headfott = "1and1_Bank\n";
         String head = "Konto-Nr " + acc_num + "\t" + name + "\n";
@@ -73,7 +74,6 @@ public class kontoauszug {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public synchronized static void FileWriterAttribute(String accountnum) {
@@ -96,7 +96,6 @@ public class kontoauszug {
         }
     }
 
-
     /*public static boolean ReadAccontData(String accountnum) throws IOException {
         String name = accountnum + "new";
         FileReader filer = new FileReader(name);
@@ -117,7 +116,6 @@ public class kontoauszug {
             System.out.print((char) i);
         }
         filer.close();
-
     }
 
     public static void ReadAccontDataold(String accountnum) throws IOException {
@@ -129,7 +127,6 @@ public class kontoauszug {
             System.out.print((char) i);
         }
         filer.close();
-
     }
 
 
