@@ -115,4 +115,9 @@ public class Network {
         handler.disconnect();
     }
 
+    public static String getUsername() {
+        String username = "";
+        return username;
+    }
+
 }
