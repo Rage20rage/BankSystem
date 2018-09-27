@@ -131,7 +131,7 @@ public class kontoauszug {
         BufferedWriter bw = new BufferedWriter(writer);
         int i;
         while ((i = filer.read()) != -1) {
-            text += (char) i;
+            text =text +(char) i;
         }
         writer.append("\n" + dateTime + "\n" + text);
         bw.close();
