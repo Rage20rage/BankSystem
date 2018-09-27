@@ -57,14 +57,7 @@ public class Network {
         handler.send(city);
         try { Thread.sleep(100); } catch (InterruptedException e) { e.printStackTrace(); }
         handler.send(SHA512.crypt(password));
-        int response = -34732434;
-        String recived = handler.recive();
-        try {
-            response = Integer.valueOf(recived);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(recived);
-        }
+        int response = Integer.valueOf(handler.recive());
         return response;
     }
 
