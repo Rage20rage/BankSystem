@@ -1,8 +1,6 @@
 package lws.banksystem.server.log;
-
-import java.io.File;
 import java.io.*;
-import java.time.LocalDate;
+import java.time.*;
 
 
 public class kontoauszug {
@@ -24,25 +22,7 @@ public class kontoauszug {
         }
     }
 
-    /*public static void PostBoxCreateold(String accountnum) throws Exception {
-        File file = new File(accountnum + "old");
-        file.setReadOnly();
-        //Create the file
-        if (file.createNewFile()) {
-            System.out.println("File is created!");
-            //Write Content
-            FileWriter writer = new FileWriter(file);
-            LocalDate dateTime = LocalDate.now();
-            writer.write(dateTime.toString());
-            writer.close();
-        } else {
-            System.out.println("File already exists.");
-
-        }
-    }*/// nicht nötig
-
-
-    public static String CreatSkeleton() {
+    public static String creatSkeleton() {
         //heir DB verbendung
         String name = "Adnan Almsuker";//konto inhaber name kommt hier
         String acc_num = "1234";
@@ -54,7 +34,7 @@ public class kontoauszug {
         return skeleton;
     }
 
-    public synchronized static void DataSevr(String accountnum, String acc_Balance, String bookingText) throws IOException {
+    public synchronized static void dataSevr(String accountnum, String acc_Balance, String bookingText) throws IOException {
         // LocalDate dateTime = LocalDate.now();
         String bodyin = dateTime + "\t" + bookingText + "\t" + "\t" + acc_Balance + " €\n";
         String test = accountnum + "new";
@@ -76,7 +56,7 @@ public class kontoauszug {
         }
     }
 
-    public synchronized static void FileWriterAttribute(String accountnum) {
+    public synchronized static void fileWriterAttribute(String accountnum) {
         try {
             File file = new File(accountnum + "new");// heir pfart eintragen
             FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
@@ -86,7 +66,7 @@ public class kontoauszug {
 
             } else {
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.append(CreatSkeleton());
+                bw.append(creatSkeleton());
                 System.out.println("Done");
                 bw.close();
 
@@ -96,7 +76,7 @@ public class kontoauszug {
         }
     }
 
-    public static void ReadAccontData(String accountnum) throws IOException {
+    public static void readAccontData(String accountnum) throws IOException {
         String name = accountnum + "new";
         FileReader filer = new FileReader(name);
         // heir vondaten bank aktuel konto stand holen
@@ -107,7 +87,7 @@ public class kontoauszug {
         filer.close();
     }
 
-    public static void ReadAccontDataold(String accountnum) throws IOException {
+    public static void readAccontDataold(String accountnum) throws IOException {
         String name = accountnum + "old";
         FileReader filer = new FileReader(name);
         // heir vondaten bank aktuel konto stand holen
@@ -119,7 +99,7 @@ public class kontoauszug {
     }
 
 
-    public synchronized static void Datamoving(String accountnum) throws IOException {
+    public synchronized static void dataMoving(String accountnum) throws IOException {
 
         FileReader filer = new FileReader(accountnum + "new");
         String text = "";
@@ -131,37 +111,17 @@ public class kontoauszug {
         BufferedWriter bw = new BufferedWriter(writer);
         int i;
         while ((i = filer.read()) != -1) {
-            text =text +(char) i;
+            text = text + (char) i;
         }
         writer.append("\n" + dateTime + "\n" + text);
         bw.close();
         writer.close();
         filer.close();
         FileWriter filew = new FileWriter(accountnum + "new");
-        filew.write(CreatSkeleton());
+        filew.write(creatSkeleton());
         filew.flush();
         filew.close();
         System.out.println("end");
     }
-
-
-    /*public static void main(String[] args) throws Exception {
-        System.out.println(CreatSkeleton());
-        //PostBoxCreatenew("2");
-        //PostBoxCreatenew("1");
-        //PostBoxCreateold("2");
-        //FileWriterAttribute("1" );
-        //FileWriterAttribute("2");
-
-        DataSevr("2", "18", "Einzahlen");
-        DataSevr("1", "18", "Einzahlen");
-        ReadAccontData("2");
-        //Datamoving("2");
-        //ReadAccontDataold("1");
-
-        // nur test zwike
-    }*/
-
-
 }
 
