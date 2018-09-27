@@ -12,7 +12,7 @@ public class MySQL {
 
     public static NetworkResponse login(String userID, String password) {
         Logger.log("User ID ist: " + userID);
-        ResultSet rs = SQLHandler.getResultSet("SELECT `Passwort` FROM `Accounts` WHERE `ID`=`"+userID+"`");
+        ResultSet rs = SQLHandler.getResultSet("SELECT `Passwort` FROM `Accounts` WHERE `ID`='"+userID+"'");
         try {
             if(rs.next()) {
                 if(rs.getString("Passwort").equalsIgnoreCase(password)) {

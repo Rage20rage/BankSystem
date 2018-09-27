@@ -2,9 +2,19 @@ package lws.banksystem.client.network;
 
 import lws.banksystem.client.cryption.SHA512;
 
+import java.security.PrivateKey;
+import java.security.PublicKey;
+
 public class Network {
 
     public static NetworkHandler handler;
+    public static PrivateKey ownPrivateKey;
+    public static PublicKey ownPublicKey;
+    public static PublicKey otherPublicKey;
+
+    private static void crypt() {
+
+    }
 
     public static NetworkResponse login(String userID, String password) {
         handler = new NetworkHandler("172.17.186.133", 7347);
