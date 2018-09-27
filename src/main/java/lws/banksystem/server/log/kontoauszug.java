@@ -95,12 +95,23 @@ public class kontoauszug {
                 bw.close();
 
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+    /*public static boolean ReadAccontData(String accountnum) throws IOException {
+        String name = accountnum + "new";
+        FileReader filer = new FileReader(name);
+        char[] a = new char[filer.read()];
+        filer.read(a);
+        for (char c : a) {
+            System.out.print(c);
+        }
+        filer.close();
+        return true;
+    }*/
     public static void ReadAccontData(String accountnum) throws IOException {
         String name = accountnum + "new";
         FileReader filer = new FileReader(name);
@@ -112,6 +123,7 @@ public class kontoauszug {
         filer.close();
 
     }
+
     public static void ReadAccontDataold(String accountnum) throws IOException {
         String name = accountnum + "old";
         FileReader filer = new FileReader(name);
@@ -128,8 +140,6 @@ public class kontoauszug {
     public synchronized static void Datamoving(String accountnum) throws IOException {
 
         FileReader filer = new FileReader(accountnum + "new");
-        //char[] a = new char[Integer.parseInt(accountnum + "new".toString().length())];
-        // filer.read(a);
         String text = "";
         BufferedReader br = new BufferedReader(filer);
         String[] text1 = new String[1024];
@@ -143,17 +153,13 @@ public class kontoauszug {
         }
         writer.append("\n" + dateTime + "\n" + text);
         bw.close();
-
         writer.close();
         filer.close();
-
         FileWriter filew = new FileWriter(accountnum + "new");
         filew.write(CreatSkeleton());
         filew.flush();
         filew.close();
         System.out.println("end");
-        //File file = new File("test");
-        //file.deleteOnExit();
     }
 
 
