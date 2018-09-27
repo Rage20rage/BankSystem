@@ -2,6 +2,7 @@ package lws.banksystem.client.view;
 
 import lws.banksystem.client.Window;
 import lws.banksystem.client.model.UiContainer;
+import lws.banksystem.client.network.Network;
 
 import javax.swing.*;
 import java.applet.Applet;
@@ -23,7 +24,7 @@ import java.util.function.BiConsumer;
             System.out.println("Der Knopf geht!");
             this.callBack = callBack;
             ui.put("id-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
-            ui.put("Kontostand" , new UiContainer(new JTextArea(),1, 1));
+            ui.put("Kontostand" , new UiContainer(new JTextArea(/*Network.getBalance()*/),1, 1));
             JRadioButton radioButton1= new JRadioButton("Geld einzahlen:");
             ui.put("checkbox-in", new UiContainer(radioButton1, 0, 2));
             radioButton1.addActionListener(this::actionPerformed);
@@ -39,7 +40,6 @@ import java.util.function.BiConsumer;
             payOutMoney.addActionListener(this::handelpayOutMoneyDeposit);
             ui.put("toRun-button", new UiContainer(payOutMoney, 1, 4));
 
-
             JButton homescren = new JButton("Zurück in Hauptmenü");
             homescren.addActionListener(this);
             ui.put("homescren-button", new UiContainer(homescren, 2, 4));
@@ -47,7 +47,6 @@ import java.util.function.BiConsumer;
 
         private void handelpayOutMoneyDeposit(ActionEvent actionEvent) {
 
-//wenn marko das gemacht hääte wäre er down
         }
 
 
@@ -71,18 +70,28 @@ import java.util.function.BiConsumer;
 
         @Override
         public void actionPerformed(ActionEvent ae) {
+            JTextField textField1 = (JTextField) this.ui.get("betrag1").getComponent();
+            JTextField textField2 = (JTextField) this.ui.get("betrag2").getComponent();
+            textField1.setVisible(false);
+            textField2.setVisible(false);
             if(ae.getSource()== this.ui.get("checkbox-in").getComponent()){
                 JRadioButton radioButtonin = (JRadioButton) ae.getSource();
                 JRadioButton radioButtonout = (JRadioButton) this.ui.get("checkbox-out").getComponent();
+                textField1.setVisible(true);
+
                 if (radioButtonout.isSelected()){
                     radioButtonout.setSelected(false);
+
+
                 }
 
             }if (ae.getSource()== this.ui.get("checkbox-out").getComponent()){
                 JRadioButton radioButtonout = (JRadioButton) ae.getSource();
                 JRadioButton radioButtonin = (JRadioButton) this.ui.get("checkbox-in").getComponent();
+                textField2.setVisible(true);
                 if (radioButtonin.isSelected()){
                     radioButtonin.setSelected(false);
+
                 }
             }
             if (ae.getSource() == this.ui.get("homescren-button").getComponent()) {

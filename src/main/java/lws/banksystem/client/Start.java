@@ -16,7 +16,7 @@ public class Start {
     private BiConsumer<String, HashMap<String, String>> callBack = (s, values) -> changeApplicationState(s, values);
 
     private Start() {
-        Window.getInstance().applyView(new moneychangers(callBack));
+        Window.getInstance().applyView(new home(   callBack));
     }
 
     private void changeApplicationState(String state, HashMap<String, String> values){

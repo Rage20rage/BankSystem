@@ -2,6 +2,7 @@ package lws.banksystem.client.view;
 
 import lws.banksystem.client.Window;
 import lws.banksystem.client.model.UiContainer;
+import lws.banksystem.client.network.Network;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,27 +20,27 @@ public class home implements View, ActionListener {
         this.callBack = callBack;
 
         ui.put("id-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
-        ui.put("id", new UiContainer(new JTextArea(), 1, 1));
+        ui.put("id", new UiContainer(new JTextArea(Network.getBalance()), 1, 1));
 
         ui.put("username-label", new UiContainer(new JLabel("Nutzername:"), 0, 2));
         ui.put("Kontoauszug-", new UiContainer(new JTextArea(), 1, 2));
 
 
         JButton history = new JButton("Verlauf");
-        history.addActionListener(this::handelhistory);
+        history.addActionListener(this);
         ui.put("history-button", new UiContainer(history, 1, 3));
 
         JButton depositMoney = new JButton("Geld ein/auszahlen");
-        depositMoney.addActionListener(this::handelpayOutMoneyDeposit);
+        depositMoney.addActionListener(this);
         ui.put("depositMoney-button", new UiContainer(depositMoney, 1, 4));
 
         JButton transfer = new JButton("Überweisen");
         transfer.addActionListener(this);
         ui.put("transfer-button", new UiContainer(transfer, 2, 3));
 
-        JButton payOutMoney = new JButton("Auslogen");
-        payOutMoney.addActionListener(this::handelpayOutMoneyDeposit);
-        ui.put("payOutMoney-button", new UiContainer(payOutMoney, 2, 4));
+        JButton logout = new JButton("Auslogen");
+        logout.addActionListener(this);
+        ui.put("payOutMoney-button", new UiContainer(logout, 2, 4));
 
 
     }
@@ -80,8 +81,12 @@ public class home implements View, ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
 
-        if (ae.getSource() == this.ui.get("transfer-button").getComponent()) {
+        if (ae.getSource() == this.ui.get("depositMoney-button").getComponent()) {
             Window.getInstance().applyView(new moneychangers(callBack));
+        }
+        if(ae.getSource()==this.ui.get("logout").getComponent()){
+            Network.logout();
+            Window.getInstance().applyView(new Login(callBack));
         }
 
     }
