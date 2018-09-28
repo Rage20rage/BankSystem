@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9142c413-da00-4415-9bbf-00c096092c9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_healthmarketscience_common_common_util_1_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_healthmarketscience_sqlbuilder_sqlbuilder_2_1_7.xml" beforeDir="false" />
@@ -18,6 +19,18 @@
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+<<<<<<< HEAD
+    <list default="true" id="9142c413-da00-4415-9bbf-00c096092c9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Login.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+    <list default="true" id="9142c413-da00-4415-9bbf-00c096092c9c" name="Default Changelist" comment="" />
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,12 +54,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="196" />
+          <entry key="java" value="231" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="196" />
+          <entry key="JAVA" value="231" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -88,10 +108,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+        <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/Start.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/network/Network.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1035">
+              <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/network/NetworkHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-866">
+              <caret line="36" column="52" lean-forward="true" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Downloads/jdk-10.0.2/lib/src.zip!/java.base/java/security/ProtectionDomain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Register.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="95" selection-start-line="95" selection-end-line="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Downloads/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/AbstractButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27855">
+              <caret line="1966" selection-start-line="1966" selection-end-line="1966" />
+=======
         <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/server/MySQL/MySQL.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="705">
               <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+=======
+            <state relative-caret-position="399">
+              <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
             </state>
           </provider>
         </entry>
@@ -117,6 +197,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/server/network/Action.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="720">
               <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
             </state>
@@ -137,6 +218,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+=======
+<<<<<<< HEAD
+            <state>
+              <caret column="35" selection-start-column="35" selection-end-column="35" />
+=======
+            <state relative-caret-position="300">
+              <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,15 +234,42 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/lws/banksystem/client/StartTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+=======
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneytransfer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="563">
+              <caret line="90" column="60" selection-start-line="90" selection-start-column="60" selection-end-line="90" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneychangers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="33" column="66" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
+=======
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -177,8 +294,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/network/Network.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="270">
               <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+=======
+            <state relative-caret-position="758">
+              <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="123" selection-end-column="47" />
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,8 +331,22 @@
         <option value="$PROJECT_DIR$/src/main/java/lws/banksystem/server/MySQL/MySQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/lws/banksystem/server/MySQL/SQLHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/lws/banksystem/client/network/NetworkHandler.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Home.java" />
         <option value="$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Login.java" />
+=======
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Login.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="y" value="28" />
+    <option name="width" value="1920" />
+    <option name="height" value="586" />
+=======
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
         <option value="$PROJECT_DIR$/src/main/java/lws/banksystem/client/network/Network.java" />
       </list>
     </option>
@@ -220,6 +357,7 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1600" />
@@ -356,12 +494,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538117885480" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538058305656" />
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -411,7 +553,15 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="864" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26640928" />
+=======
+<<<<<<< HEAD
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18356457" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -420,7 +570,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32919848" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.18976744" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1898855" />
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -483,27 +637,88 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/Downloads/jdk-10.0.2/lib/src.zip!/java.base/java/security/ProtectionDomain.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneychangers.java">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/test/java/lws/banksystem/client/cryption/SHA512Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="33" column="66" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneytransfer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/server/network/AntiDos.java">
+=======
+    <entry file="jar://$USER_HOME$/Downloads/jdk-10.0.2/lib/src.zip!/java.base/java/security/ProtectionDomain.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneychangers.java">
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="330">
+          <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/server/MySQL/MySQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/network/Network.java">
+=======
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneytransfer.java">
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+=======
+    <entry file="jar://$USER_HOME$/Downloads/jdk-10.0.2/lib/src.zip!/java.base/java/security/ProtectionDomain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="jar://$USER_HOME$/Downloads/jdk-10.0.2/lib/src.zip!/java.desktop/javax/swing/AbstractButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27855">
+          <caret line="1966" selection-start-line="1966" selection-end-line="1966" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+=======
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
     <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/server/network/AntiDos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -535,21 +750,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="668">
           <caret line="151" column="30" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="30" />
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneytransfer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Moneychangers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="33" column="66" selection-start-line="33" selection-start-column="66" selection-end-line="33" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/server/network/Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-607">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
     <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/server/MySQL/SQLHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/network/NetworkHandler.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-866">
+          <caret line="36" column="52" lean-forward="true" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+=======
         <state relative-caret-position="1860">
           <caret line="124" column="23" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="23" />
         </state>
@@ -597,13 +844,32 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/test/java/lws/banksystem/client/StartTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="64">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lws/banksystem/client/view/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="90" column="60" selection-start-line="90" selection-start-column="60" selection-end-line="90" selection-end-column="60" />
+=======
+        <state relative-caret-position="399">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+>>>>>>> d60c99e6f438cd9f3b8414455567f74e5c942031
         </state>
       </provider>
     </entry>
@@ -624,6 +890,7 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> a786827f52c9beed1543ce2afa13370636254d43
         </state>
       </provider>
     </entry>
