@@ -6,7 +6,7 @@ import lws.banksystem.server.MySQL.MySQL;
 
 public class Action {
 
-    public static void execute(String action, Connections connection) {
+    public static  synchronized void execute(String action, Connections connection) {
         if (!action.equals("Konto-Login") && !action.equals("System-Register") && !connection.loggedIn) {
             NetworkHandler.send(connection, "NO-Action");
             NetworkHandler.disconnect(connection);
@@ -94,6 +94,12 @@ public class Action {
                 NetworkHandler.send(connection, "Transfer-ERROR");
                 NetworkHandler.disconnect(connection);
             }
+        } else if(action.equals("Konto-Username")) {
+            String[] user = new String[2];
+            user = MySQL.getUser(connection.id);
+            NetworkHandler.send(connection, user[0]);
+            try { Thread.sleep(100); } catch (InterruptedException e) { e.printStackTrace(); }
+            NetworkHandler.send(connection, user[1]);
         } else {
             try { Thread.sleep(5000); } catch (InterruptedException e) { e.printStackTrace(); }
             NetworkHandler.send(connection, "NO-Action");

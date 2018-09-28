@@ -118,6 +118,10 @@ public class Network {
 
     public static String getUsername() {
         String username = "";
+        handler.send("Konto-Username");
+        username = username + handler.recive();
+        username = username + " ";
+        username = username + handler.recive();
         return username;
     }
 
