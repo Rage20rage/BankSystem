@@ -13,18 +13,14 @@ public class Network {
     public static PublicKey ownPublicKey;
     public static PublicKey otherPublicKey;
 
-    private static void crypt() {
-
-    }
-
     public static NetworkResponse login(String userID, String password) {
         handler = new NetworkHandler("172.17.186.133", 7347);
         handler.connect();
-        try { Thread.sleep(10000); } catch (InterruptedException e) { e.printStackTrace(); }
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
         handler.send("Konto-Login");
-        try { Thread.sleep(100); } catch (InterruptedException e) { e.printStackTrace(); }
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
         handler.send(userID);
-        try { Thread.sleep(100); } catch (InterruptedException e) { e.printStackTrace(); }
+        try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
         handler.send(SHA512.crypt(password));
         String response = handler.recive();
         if(response.equals("Login-TRUE")) {
