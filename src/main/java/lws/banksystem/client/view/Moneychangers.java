@@ -20,30 +20,30 @@ import java.util.function.BiConsumer;
             System.out.println("Der Knopf geht!");
             this.callBack = callBack;
 
-            ui.put("id-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
+            this.ui.put("id-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
             JTextArea textArea2 =new JTextArea(Network.getBalance());
             textArea2.setEditable(false);
-            ui.put("texterea-balance", new UiContainer(textArea2, 1, 1));
+            this.ui.put("texterea-balance", new UiContainer(textArea2, 1, 1));
 
 
             JRadioButton radioButton1= new JRadioButton("Geld einzahlen:");
-            ui.put("checkbox-in", new UiContainer(radioButton1, 0, 2));
+            this.ui.put("checkbox-in", new UiContainer(radioButton1, 0, 2));
             radioButton1.addActionListener(this);
 
             JRadioButton radioButton2= new JRadioButton("Geld abheben:");
-            ui.put("checkbox-out", new UiContainer(radioButton2, 0, 3));
+            this.ui.put("checkbox-out", new UiContainer(radioButton2, 0, 3));
             radioButton2.addActionListener(this);
 
-            ui.put("betrag1" , new UiContainer(new JTextField(),1,2));
-            ui.put("betrag2" , new UiContainer(new JTextField(),1, 3));
+            this.ui.put("betrag1" , new UiContainer(new JTextField(),1,2));
+            this.ui.put("betrag2" , new UiContainer(new JTextField(),1, 3));
 
             JButton payOutMoney = new JButton("Ausführen");
             payOutMoney.addActionListener(this);
-            ui.put("toRun-button", new UiContainer(payOutMoney, 1, 4));
+            this.ui.put("toRun-button", new UiContainer(payOutMoney, 1, 4));
 
             JButton homescren = new JButton("Zurück in Hauptmenü");
             homescren.addActionListener(this);
-            ui.put("homescren-button", new UiContainer(homescren, 2, 4));
+            this.ui.put("homescren-button", new UiContainer(homescren, 2, 4));
         }
 
         public JPanel getJPanel() {
@@ -67,6 +67,8 @@ import java.util.function.BiConsumer;
         public void actionPerformed(ActionEvent ae) {
             JTextField textField1 = (JTextField) this.ui.get("betrag1").getComponent();
             JTextField textField2 = (JTextField) this.ui.get("betrag2").getComponent();
+            JRadioButton radioButtonOut = (JRadioButton) this.ui.get("checkbox-out").getComponent();
+            JRadioButton radioButtonIn = (JRadioButton) this.ui.get("checkbox-in").getComponent();
             textField1.setVisible(false);
             textField2.setVisible(false);
             if(ae.getSource()== this.ui.get("checkbox-in").getComponent()){
@@ -96,11 +98,13 @@ import java.util.function.BiConsumer;
             if (ae.getSource() == this.ui.get("homescren-button").getComponent()) {
                 Window.getInstance().applyView(new Home(callBack));
             }
-            if (ae.getSource() == this.ui.get("toRun-button").getComponent()){
+            if (ae.getSource() == this.ui.get("toRun-button").getComponent()) {
 
-                if(ae.getSource()== this.ui.get("checkbox-in").getComponent())
-                Network.addMoney(textField1.getText());
-                else{
+                if (radioButtonIn.isSelected()){
+                    System.out.println("jetz kommt add money: "+textField1.getText());
+                    Network.addMoney(textField1.getText());
+            } else if(radioButtonOut.isSelected()) {
+                    System.out.println("jetzt kommt getmoney: "+textField2.getText());
                 Network.getMoney(textField2.getText());
             }
 
