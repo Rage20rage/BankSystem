@@ -36,7 +36,7 @@ public class Kontoauszug {
 
     public static void dataSevr(String accountnum, String acc_Balance, String bookingText) {
         // LocalDate dateTime = LocalDate.now();
-        String bodyin = dateTime + "\t" + bookingText + "\t" + "\t" + acc_Balance + " €\n";
+        String bodyin = dateTime + "\t\t" + bookingText + "\t" + "\t" + acc_Balance + " €\n";
         String test = accountnum + "new";
         File file;// heir pfart eintragen
         file = new File(test);
