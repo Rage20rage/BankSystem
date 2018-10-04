@@ -29,18 +29,14 @@ public class Kontoauszug {
     private static String creatSkeleton(String name, String acc_num) {
         String headfott = "1and1_Bank\n";
         String head = "Konto-Nr " + acc_num + "\t" + name + "\n";
-        String body = "Datum\t\t" + "Buchungtext\t\t" + "Betrag\n";
+        String body = "Datum\t\t" + "Buchungtext\t\t\t" + "Betrag\n";
         String skeleton = headfott + head + body;
         return skeleton;
     }
 
     public static void dataSevr(String accountnum, String acc_Balance, String bookingText) {
         // LocalDate dateTime = LocalDate.now();
-        String spacer = "";
-        if (bookingText.startsWith("Überweizen an Konto-ID")) {
-            spacer = "\t";
-        }
-        String bodyin = dateTime + "\t\t" + bookingText + "\t\t" + spacer + acc_Balance + " €\n";
+        String bodyin = dateTime + "\t\t" + bookingText + "\t\t\t" + acc_Balance + " €\n";
         String test = accountnum + "new";
         File file;// heir pfart eintragen
         file = new File(test);
