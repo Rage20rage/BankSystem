@@ -28,7 +28,7 @@ public class NetworkHandler extends Object {
     private String ipAddress;
     private int port;
 
-    public synchronized void connect() {
+    public void connect() {
         try {
             Logger.log("Verbinde mit Server...");
             socket = new Socket(ipAddress, port);
@@ -41,7 +41,7 @@ public class NetworkHandler extends Object {
         }
     }
 
-    public synchronized void disconnect() {
+    public void disconnect() {
         try {
             Logger.log("Trenne Verbindung...");
             socket.close();
@@ -52,7 +52,7 @@ public class NetworkHandler extends Object {
         }
     }
 
-    public synchronized boolean isConnected() {
+    public boolean isConnected() {
         if (socket == null) {
             return false;
         } else {
@@ -60,7 +60,7 @@ public class NetworkHandler extends Object {
         }
     }
 
-    public synchronized void send(String message) {
+    public void send(String message) {
         try {
             Logger.log("Bereite Daten zum Versenden vor...");
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -85,7 +85,7 @@ public class NetworkHandler extends Object {
         }
     }
 
-    public synchronized String recive() {
+    public String recive() {
         String message = null;
         try {
             Logger.log("Warte auf Daten...");
@@ -109,7 +109,7 @@ public class NetworkHandler extends Object {
         return message;
     }
 
-    public synchronized void objectSend(Object object) {
+    public void objectSend(Object object) {
         try {
             Logger.log("Bereite Object zum Versenden vor...");
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
@@ -122,7 +122,7 @@ public class NetworkHandler extends Object {
         }
     }
 
-    public synchronized Object objectRecive() {
+    public Object objectRecive() {
         Object object = null;
         try {
             Logger.log("Warten auf Objekt...");
