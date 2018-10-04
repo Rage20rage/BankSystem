@@ -1,8 +1,12 @@
 package lws.banksystem.client;
 
+import lws.banksystem.client.network.Network;
 import lws.banksystem.client.view.View;
 
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 public class Window extends JFrame {
 
@@ -10,6 +14,19 @@ public class Window extends JFrame {
     public static Window getInstance(){
         if(window == null){
             window = new Window();
+            WindowListener listener = new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    Network.logout();
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
+                    System.exit(0);
+                }
+            };
+            window.addWindowListener(listener);
         }
         return window;
     }

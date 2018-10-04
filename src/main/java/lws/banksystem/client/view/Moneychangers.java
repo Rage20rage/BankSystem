@@ -2,6 +2,7 @@ package lws.banksystem.client.view;
 
 import lws.banksystem.client.Window;
 import lws.banksystem.client.model.UiContainer;
+import lws.banksystem.client.network.Network;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,36 +21,30 @@ import java.util.function.BiConsumer;
             this.callBack = callBack;
 
             ui.put("id-label", new UiContainer(new JLabel("Kontostandt:"), 0, 1));
-            JTextArea textArea2 =new JTextArea("1256,65");
+            JTextArea textArea2 =new JTextArea(Network.getBalance());
             textArea2.setEditable(false);
             ui.put("texterea-balance", new UiContainer(textArea2, 1, 1));
 
 
             JRadioButton radioButton1= new JRadioButton("Geld einzahlen:");
             ui.put("checkbox-in", new UiContainer(radioButton1, 0, 2));
-            radioButton1.addActionListener(this::actionPerformed);
+            radioButton1.addActionListener(this);
 
             JRadioButton radioButton2= new JRadioButton("Geld abheben:");
             ui.put("checkbox-out", new UiContainer(radioButton2, 0, 3));
-            radioButton2.addActionListener(this::actionPerformed);
+            radioButton2.addActionListener(this);
 
             ui.put("betrag1" , new UiContainer(new JTextField(),1,2));
             ui.put("betrag2" , new UiContainer(new JTextField(),1, 3));
 
             JButton payOutMoney = new JButton("Ausführen");
-            payOutMoney.addActionListener(this::handelpayOutMoneyDeposit);
+            payOutMoney.addActionListener(this);
             ui.put("toRun-button", new UiContainer(payOutMoney, 1, 4));
 
             JButton homescren = new JButton("Zurück in Hauptmenü");
             homescren.addActionListener(this);
             ui.put("homescren-button", new UiContainer(homescren, 2, 4));
         }
-
-        private void handelpayOutMoneyDeposit(ActionEvent actionEvent) {
-
-        }
-
-
 
         public JPanel getJPanel() {
             final JPanel jPanel = new JPanel();
@@ -79,6 +74,8 @@ import java.util.function.BiConsumer;
                 JRadioButton radioButtonout = (JRadioButton) this.ui.get("checkbox-out").getComponent();
                 textField1.setVisible(true);
 
+
+
                 if (radioButtonout.isSelected()){
                     radioButtonout.setSelected(false);
 
@@ -89,8 +86,10 @@ import java.util.function.BiConsumer;
                 JRadioButton radioButtonout = (JRadioButton) ae.getSource();
                 JRadioButton radioButtonin = (JRadioButton) this.ui.get("checkbox-in").getComponent();
                 textField2.setVisible(true);
+
                 if (radioButtonin.isSelected()){
                     radioButtonin.setSelected(false);
+
 
                 }
             }
@@ -98,7 +97,13 @@ import java.util.function.BiConsumer;
                 Window.getInstance().applyView(new Home(callBack));
             }
             if (ae.getSource() == this.ui.get("toRun-button").getComponent()){
-                //dann geld über / einzahlen funktion
+
+                if(ae.getSource()== this.ui.get("checkbox-in").getComponent())
+                Network.addMoney(textField1.getText());
+                else{
+                Network.getMoney(textField2.getText());
+            }
+
             }
         }
     }

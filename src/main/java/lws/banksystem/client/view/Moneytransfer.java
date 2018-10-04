@@ -29,10 +29,10 @@ import java.util.function.BiConsumer;
             ui.put("Überwieungsbetrag" , new UiContainer(new JTextField(),1,2));
 
             ui.put("anwen-label", new UiContainer(new JLabel("Tragen sie hier den begünstigten ein"), 0, 3));
-            ui.put("Wemdasgelzusteht" , new UiContainer(new JTextField(),1,3));
+            ui.put("targetID" , new UiContainer(new JTextField(),1,3));
 
             JButton payOutMoney = new JButton("Überwiesung Ausführen");
-            payOutMoney.addActionListener(this::handelpayOutMoneyDeposit);
+            payOutMoney.addActionListener(this);
             ui.put("toRun-button", new UiContainer(payOutMoney, 1, 4));
 
             JButton homescren = new JButton("Zurück in Hauptmenü");
@@ -70,6 +70,14 @@ import java.util.function.BiConsumer;
                 Window.getInstance().applyView(new Home(callBack));
             }
             if (ae.getSource() == this.ui.get("toRun-button").getComponent()){
+                JTextField tf_target = (JTextField) ui.get("targetID").getComponent();
+                JTextField tf_amount = (JTextField) ui.get("Überwieungsbetrag").getComponent();
+                Network.sendMoney(tf_target.getText() ,tf_amount.getText());
+                System.out.println("geht");
+
+
+
+
                 //dann geld über / einzahlen funktion
             }
         }
