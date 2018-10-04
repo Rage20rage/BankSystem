@@ -34,7 +34,7 @@ public class kontoauszug {
         return skeleton;
     }
 
-    public synchronized static void dataSevr(String accountnum, String acc_Balance, String bookingText) throws IOException {
+    public static void dataSevr(String accountnum, String acc_Balance, String bookingText) throws IOException {
         // LocalDate dateTime = LocalDate.now();
         String bodyin = dateTime + "\t" + bookingText + "\t" + "\t" + acc_Balance + " €\n";
         String test = accountnum + "new";
@@ -56,7 +56,7 @@ public class kontoauszug {
         }
     }
 
-    public synchronized static void fileWriterAttribute(String accountnum) {
+    public static void fileWriterAttribute(String accountnum) {
         try {
             File file = new File(accountnum + "new");// heir pfart eintragen
             FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
@@ -99,7 +99,7 @@ public class kontoauszug {
     }
 
 
-    public synchronized static void dataMoving(String accountnum) throws IOException {
+    public static void dataMoving(String accountnum) throws IOException {
 
         FileReader filer = new FileReader(accountnum + "new");
         String text = "";
