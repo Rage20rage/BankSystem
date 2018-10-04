@@ -99,8 +99,8 @@ public class MySQL {
                 return NetworkResponse.error;
             }
             int targetNewBalance = targetBalance + Integer.valueOf(amount);
-            SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+targetNewBalance+"')");
-            SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+newammount+"')");
+            SQLHandler.update("UPDATE `Accounts` SET `Kontostand`='"+targetNewBalance+"' WHERE `ID`='"+targetID+"'");
+            SQLHandler.update("UPDATE `Accounts` SET `Kontostand`='"+newammount+"' WHERE `ID`='"+ownID+"'");
             return NetworkResponse.allow;
         } else if(newammount < 0) {
             return NetworkResponse.deny;
@@ -121,7 +121,7 @@ public class MySQL {
         }
         int newamount = current - Integer.valueOf(amount);
         if(newamount >= 0) {
-            SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+newamount+"')");
+            SQLHandler.update("UPDATE `Accounts` SET `Kontostand`='"+newamount+"' WHERE `ID`='"+id+"'");
             return NetworkResponse.allow;
         } else if(newamount < 0) {
             return NetworkResponse.deny;
@@ -141,7 +141,7 @@ public class MySQL {
             return NetworkResponse.error;
         }
         int newBalance = balance + Integer.valueOf(amount);
-        SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+newBalance+"')");
+        SQLHandler.update("UPDATE `Accounts` SET `Kontostand`='"+newBalance+"' WHERE `ID`='"+id+"'");
         return NetworkResponse.allow;
     }
 

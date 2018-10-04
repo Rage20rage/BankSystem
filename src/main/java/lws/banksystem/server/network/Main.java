@@ -8,7 +8,7 @@ public class Main {
 
     public static NetworkHandler networkHandler;
 
-    private static int buildNumber = 3;
+    private static int buildNumber = 5;
 
     public static void main(String[] args) {
         Logger.log("Starte Server...");
