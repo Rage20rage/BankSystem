@@ -116,6 +116,11 @@ public class Kontoauszug {
     }
 
 
+    public static void fileWriterTarget(String amount,String sourceID,String targetID) {
+        //source ID= von wem der betrag kommt | targetID an wen das geld geht
+        
+    }
+
     public static void dataMoving(String accountnum, String name) {
 
         FileReader filer = null;

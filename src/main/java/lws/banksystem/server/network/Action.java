@@ -100,6 +100,7 @@ public class Action {
             NetworkResponse response = MySQL.sendMoney(connection.id, targetID, amount);
             if (response == NetworkResponse.allow) {
                 Kontoauszug.dataSevr(connection.id, amount, ("Überweizen an Konto-ID: " + targetID));
+                Kontoauszug.fileWriterTarget(amount, connection.id, targetID);
                 NetworkHandler.send(connection, "Transfer-TRUE");
             } else if (response == NetworkResponse.deny) {
                 NetworkHandler.send(connection, "Transfer-FALSE");
