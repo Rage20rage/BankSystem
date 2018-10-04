@@ -1,5 +1,7 @@
 package lws.banksystem.server.network;
 
+import lws.banksystem.server.log.Logger;
+
 public class ConnectionSheduler extends Thread {
 
     @Override
@@ -11,9 +13,9 @@ public class ConnectionSheduler extends Thread {
                 e.printStackTrace();
             }
             NetworkHandler.disconnctInActiveConnections();
-            System.out.println("Ermögliche erneuten Login...");
+            Logger.log("Ermögliche erneuten Login...");
             AntiDos.getInstance().ipAddresses.clear();
-            System.out.println("Erneuter Login wurde ermöglicht!");
+            Logger.log("Erneuter Login wurde ermöglicht!");
         }
     }
 
