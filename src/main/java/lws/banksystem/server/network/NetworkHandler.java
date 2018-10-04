@@ -44,7 +44,8 @@ public class NetworkHandler {
             connection = NetworkCrypt.inizialisizeServer(connection);
             Logger.log("Verbindung verschlüsselt!");
             connections.add(connection);
-            Main.startThread(new Thread(connection));
+            Thread thread = new Thread(connection);
+            Main.startThread(thread);
             Logger.log("Client mit der IP: \"" + socket.getInetAddress().getHostAddress() + "\" hat sich verbunden!");
         } catch (IOException e) {
             e.printStackTrace();

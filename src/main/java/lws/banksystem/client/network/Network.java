@@ -107,8 +107,17 @@ public class Network {
     }
 
     public static NetworkResponse getMoney(String ammount) {
-
-        return NetworkResponse.error;
+            handler.send("Konto-GetMoney");
+            try { Thread.sleep(100); } catch (InterruptedException e) { e.printStackTrace(); }
+            handler.send(ammount);
+            String response = handler.recive();
+        if (response.equals("Get-TRUE")) {
+            return NetworkResponse.allow;
+        } else if(response.equals("Get-FALSE")) {
+            return NetworkResponse.deny;
+        } else {
+            return NetworkResponse.error;
+        }
     }
 
     public static void logout() {

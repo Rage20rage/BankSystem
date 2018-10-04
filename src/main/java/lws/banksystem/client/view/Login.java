@@ -86,7 +86,10 @@ public class Login implements View, ActionListener {
             if(response == NetworkResponse.allow) {
                 JOptionPane.showMessageDialog(null,"Anmeldungerfolgreich");
                 Window.getInstance().applyView(new Home(callBack));
+<<<<<<< HEAD
 
+=======
+>>>>>>> fc6f85b163cc1dcfc03893504809c12b31076e73
             } else if(response == NetworkResponse.deny) {
                 JOptionPane.showMessageDialog(null,"Anmeldename oder passwort falsch");
             } else {

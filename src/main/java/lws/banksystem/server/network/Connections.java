@@ -27,7 +27,9 @@ public class Connections extends Thread {
     @Override
     public void run() {
         while (continu) {
-            if(this.continu) first = false;
+            if(this.continu) {
+                first = false;
+            }
             String action = NetworkHandler.recive(this);
             if(action == null) {
                 NetworkHandler.disconnect(this);

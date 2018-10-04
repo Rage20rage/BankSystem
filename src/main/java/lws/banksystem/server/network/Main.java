@@ -8,7 +8,7 @@ public class Main {
 
     public static NetworkHandler networkHandler;
 
-    private static int buildNumber = 1;
+    private static int buildNumber = 5;
 
     public static void main(String[] args) {
         Logger.log("Starte Server...");
@@ -26,6 +26,7 @@ public class Main {
 
     public static void startThread(Thread thread) {
         thread.start();
+        Logger.log("Neuer Thread wurde gestartet!");
     }
 
 }
