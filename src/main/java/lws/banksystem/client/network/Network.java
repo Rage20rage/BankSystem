@@ -133,11 +133,11 @@ public class Network {
         return username;
     }
 
-    public static ArrayList<String> getLog() {
-        ArrayList<String> log = new ArrayList<>();
+    public static String getLog() {
+        String log = "";
+        handler.send("Konto-LOG");
+        log = handler.recive();
         return log;
     }
-
-
 
 }
