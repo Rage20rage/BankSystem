@@ -6,7 +6,7 @@ import lws.banksystem.server.MySQL.MySQL;
 
 public class Action {
 
-    public static  synchronized void execute(String action, Connections connection) {
+    public static void execute(String action, Connections connection) {
         if (!action.equals("Konto-Login") && !action.equals("System-Register") && !connection.loggedIn) {
             NetworkHandler.send(connection, "NO-Action");
             NetworkHandler.disconnect(connection);

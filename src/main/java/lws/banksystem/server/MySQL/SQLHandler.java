@@ -16,7 +16,7 @@ public class SQLHandler {
     private static String password = "bankSystem";
     private static Connection connection = null;
 
-    public static synchronized void connect() {
+    public static void connect() {
         if(!isConnected()) {
             connection = null;
             try {
@@ -42,7 +42,7 @@ public class SQLHandler {
         }
     }
 
-    public static synchronized void disconnect() {
+    public static void disconnect() {
         try {
             Logger.log("Trenne Verbindung zur Datenbank...");
             connection.close();
@@ -53,7 +53,7 @@ public class SQLHandler {
         Logger.log("Verbindung getrennt!");
     }
 
-    public static synchronized boolean isConnected() {
+    public static boolean isConnected() {
         if(connection == null) {
             return false;
         } else {
@@ -61,7 +61,7 @@ public class SQLHandler {
         }
     }
 
-    public static synchronized void update(String querry) {
+    public static void update(String querry) {
         try {
             Logger.log("Bereite Datenbank abfrage vor...");
             connection.prepareStatement(querry).executeQuery();
@@ -73,7 +73,7 @@ public class SQLHandler {
     }
 
 
-    public static synchronized ResultSet getResultSet(String querry) {
+    public static ResultSet getResultSet(String querry) {
         try {
             Logger.log("Bereite Datenbank abfrage vor...");
             ResultSet rs = connection.prepareStatement(querry).executeQuery();

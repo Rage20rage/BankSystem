@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class MySQL {
 
-    public static  synchronized NetworkResponse login(String userID, String password) {
+    public static NetworkResponse login(String userID, String password) {
         Logger.log("User ID ist: " + userID);
         ResultSet rs = SQLHandler.getResultSet("SELECT `Passwort` FROM `Accounts` WHERE `ID`='"+userID+"'");
         try {
@@ -27,7 +27,7 @@ public class MySQL {
         }
     }
 
-    public static synchronized int register(String firstName, String lastName, String mail, String birthdate, String street, String houseNumber, String city, String zipCode, String password)  {
+    public static int register(String firstName, String lastName, String mail, String birthdate, String street, String houseNumber, String city, String zipCode, String password)  {
         int idCounter = getAviableID();
         if(idCounter != -1) {
             SQLHandler.update(
@@ -42,7 +42,7 @@ public class MySQL {
     }
 
 
-    private static synchronized int getAviableID()  {
+    private static int getAviableID()  {
         ResultSet rs = SQLHandler.getResultSet("SELECT `AUTO_INCREMENT` FROM information_schema.TABLES WHERE TABLE_NAME ='Accounts'");
         try {
             rs.next();
@@ -53,7 +53,7 @@ public class MySQL {
         return -1;
     }
 
-    public static synchronized NetworkResponse remove(String id) {
+    public static NetworkResponse remove(String id) {
         ResultSet rs = SQLHandler.getResultSet("SELECT * FROM Accounts WHERE ID='"+id+"'");
         if(rs != null) {
             SQLHandler.update("DELETE FROM Accounts WHERE ID='"+id+"'");
@@ -64,7 +64,7 @@ public class MySQL {
         //return NetworkResponse.error;
     }
 
-    public static synchronized int getBalance(String id) {
+    public static int getBalance(String id) {
         int balance = -1;
         ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+id+"'");
         try {
@@ -75,7 +75,7 @@ public class MySQL {
         return balance;
     }
 
-    public static synchronized NetworkResponse sendMoney(String ownID, String targetID, String amount) {
+    public static NetworkResponse sendMoney(String ownID, String targetID, String amount) {
         ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+ownID+"'");
         int current = 0;
         try {
@@ -105,7 +105,7 @@ public class MySQL {
         }
     }
 
-    public static synchronized NetworkResponse getMoney(String id, String amount) {
+    public static NetworkResponse getMoney(String id, String amount) {
         ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+id+"'");
         int current = 0;
         try {
@@ -125,7 +125,7 @@ public class MySQL {
         }
     }
 
-    public static synchronized NetworkResponse addMoney(String id, String amount) {
+    public static NetworkResponse addMoney(String id, String amount) {
         int balance = 0;
         ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+id+"'");
         try {
@@ -139,7 +139,7 @@ public class MySQL {
         return NetworkResponse.allow;
     }
 
-    public static synchronized String[] getUser(String id) {
+    public static String[] getUser(String id) {
         String[] user = new String[2];
         ResultSet rs = SQLHandler.getResultSet("SELECT * FROM `Accounts` WHERE `ID`='"+id+"'");
         try {

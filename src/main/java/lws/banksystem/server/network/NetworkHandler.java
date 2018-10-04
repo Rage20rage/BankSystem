@@ -25,7 +25,7 @@ public class NetworkHandler {
     private static int port;
     public static List<Connections> connections = new ArrayList<Connections>();
 
-    public static synchronized void start(int port) {
+    public static void start(int port) {
         try {
             Logger.log("Starte Netzwerk-Server...");
             serverSocket = new ServerSocket(port);
@@ -35,7 +35,7 @@ public class NetworkHandler {
         }
     }
 
-    public static synchronized void connect() {
+    public static void connect() {
         try {
             Logger.log("Warte auf Client Verbindung...");
             socket = serverSocket.accept();
@@ -51,7 +51,7 @@ public class NetworkHandler {
         }
     }
 
-    public static synchronized void disconnect(Connections connection) {
+    public static void disconnect(Connections connection) {
         try {
             Logger.log("Trenne Verbindung von einem Client...");
             connection.socket.close();
@@ -64,11 +64,11 @@ public class NetworkHandler {
         }
     }
 
-    public static synchronized boolean isConnected(Connections connection) {
+    public static boolean isConnected(Connections connection) {
         return connection.continu;
     }
 
-    public static synchronized void disconnctInActiveConnections() {
+    public static void disconnctInActiveConnections() {
         Logger.log("Schließe alle Inaktiven Verbindungen...");
         int counter = 0;
         for (Connections connection : connections) {
@@ -85,7 +85,7 @@ public class NetworkHandler {
         }
     }
 
-    public static synchronized void send(Connections connections, String message) {
+    public static void send(Connections connections, String message) {
         try {
             Logger.log("Bereite Daten zum Versenden vor...");
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connections.socket.getOutputStream()));
@@ -110,7 +110,7 @@ public class NetworkHandler {
         }
     }
 
-    public static synchronized String recive(Connections connections) {
+    public static String recive(Connections connections) {
         String message = null;
         try {
             Logger.log("Warte auf Daten...");
@@ -136,7 +136,7 @@ public class NetworkHandler {
         return message;
     }
 
-    public static synchronized void objectSend(Socket socket, Object object) {
+    public static void objectSend(Socket socket, Object object) {
         try {
             Logger.log("Bereite Object zum Versenden vor...");
             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
@@ -149,7 +149,7 @@ public class NetworkHandler {
         }
     }
 
-    public static synchronized Object objectRecive(Socket socket) {
+    public static Object objectRecive(Socket socket) {
         Object object = null;
         try {
             Logger.log("Warten auf Objekt...");
