@@ -54,9 +54,9 @@ public class MySQL {
     }
 
     public static NetworkResponse remove(String id) {
-        ResultSet rs = SQLHandler.getResultSet("SELECT * FROM Accounts WHERE ID='"+id+"'");
+        ResultSet rs = SQLHandler.getResultSet("SELECT * FROM `Accounts` WHERE `ID`='"+id+"'");
         if(rs != null) {
-            SQLHandler.update("DELETE FROM Accounts WHERE ID='"+id+"'");
+            SQLHandler.update("DELETE FROM `Accounts` WHERE `ID`='"+id+"'");
             return NetworkResponse.allow;
         } else {
             return NetworkResponse.deny;
@@ -66,19 +66,22 @@ public class MySQL {
 
     public static int getBalance(String id) {
         int balance = -1;
-        ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+id+"'");
+        ResultSet rs = SQLHandler.getResultSet("SELECT * FROM `Accounts` WHERE `ID`='"+id+"'");
         try {
-            balance = rs.getInt("Kontostand");
+            rs.next();
+            balance = Integer.valueOf(rs.getString("Kontostand"));
         } catch (SQLException e) {
             e.printStackTrace();
+            balance = -1;
         }
         return balance;
     }
 
     public static NetworkResponse sendMoney(String ownID, String targetID, String amount) {
-        ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+ownID+"'");
+        ResultSet rs = SQLHandler.getResultSet("SELECT `Kontostand` FROM `Accounts` WHERE `ID`='"+ownID+"'");
         int current = 0;
         try {
+            rs.next();
             current = rs.getInt("Kontostand");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -87,16 +90,17 @@ public class MySQL {
         int newammount = current - Integer.valueOf(amount);
         if(newammount >= 0) {
             int targetBalance = 0;
-            ResultSet rs2 = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+targetID+"'");
+            ResultSet rs2 = SQLHandler.getResultSet("SELECT `Kontostand` FROM `Accounts` WHERE `ID`='"+targetID+"'");
             try {
+                rs2.next();
                 targetBalance = rs2.getInt("Kontostand");
             } catch (SQLException e) {
                 e.printStackTrace();
                 return NetworkResponse.error;
             }
             int targetNewBalance = targetBalance + Integer.valueOf(amount);
-            SQLHandler.update("INSERT INTO Accounts (Kontostand) VALUES ('"+targetNewBalance+"')");
-            SQLHandler.update("INSERT INTO Accounts (Kontostand) VALUES ('"+newammount+"')");
+            SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+targetNewBalance+"')");
+            SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+newammount+"')");
             return NetworkResponse.allow;
         } else if(newammount < 0) {
             return NetworkResponse.deny;
@@ -106,9 +110,10 @@ public class MySQL {
     }
 
     public static NetworkResponse getMoney(String id, String amount) {
-        ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+id+"'");
+        ResultSet rs = SQLHandler.getResultSet("SELECT `Kontostand` FROM `Accounts` WHERE `ID`='"+id+"'");
         int current = 0;
         try {
+            rs.next();
             current = rs.getInt("Kontostand");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -116,7 +121,7 @@ public class MySQL {
         }
         int newamount = current - Integer.valueOf(amount);
         if(newamount >= 0) {
-            SQLHandler.update("INSERT INTO Accounts (Kontostand) VALUES ('"+newamount+"')");
+            SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+newamount+"')");
             return NetworkResponse.allow;
         } else if(newamount < 0) {
             return NetworkResponse.deny;
@@ -127,15 +132,16 @@ public class MySQL {
 
     public static NetworkResponse addMoney(String id, String amount) {
         int balance = 0;
-        ResultSet rs = SQLHandler.getResultSet("SELECT Kontostand FROM Accounts WHERE ID='"+id+"'");
+        ResultSet rs = SQLHandler.getResultSet("SELECT `Kontostand` FROM `Accounts` WHERE `ID`='"+id+"'");
         try {
+            rs.next();
             balance = rs.getInt("Kontostand");
         } catch (SQLException e) {
             e.printStackTrace();
             return NetworkResponse.error;
         }
         int newBalance = balance + Integer.valueOf(amount);
-        SQLHandler.update("INSERT INTO Accounts (Kontostand) VALUES ('"+newBalance+"')");
+        SQLHandler.update("INSERT INTO `Accounts` (Kontostand) VALUES ('"+newBalance+"')");
         return NetworkResponse.allow;
     }
 
@@ -143,8 +149,9 @@ public class MySQL {
         String[] user = new String[2];
         ResultSet rs = SQLHandler.getResultSet("SELECT * FROM `Accounts` WHERE `ID`='"+id+"'");
         try {
-            user[0] = rs.getString("Vorname");
-            user[1] = rs.getString("Nachname");
+            rs.next();
+            user[0] = new String(rs.getString("Vorname"));
+            user[1] = new String(rs.getString("Nachname"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
