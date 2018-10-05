@@ -118,8 +118,27 @@ public class Kontoauszug {
 
     public static void fileWriterTarget(String amount,String sourceID,String targetID) {
         //source ID= von wem der betrag kommt | targetID an wen das geld geht
-        
+        String bodyin = dateTime + "\t\t"+"Überweisung von "+sourceID+ "\t\t\t" + amount + " €\n";
+        String test = targetID + "new";
+        File file;// heir pfart eintragen
+        file = new File(test);
+        try {
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(test, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            fw.append(bodyin);
+            fw.flush();
+            fw.close();
+
+            System.out.println("Done");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+        
+
 
     public static void dataMoving(String accountnum, String name) {
 

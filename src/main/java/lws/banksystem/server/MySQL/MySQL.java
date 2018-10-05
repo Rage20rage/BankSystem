@@ -93,7 +93,7 @@ public class MySQL {
             ResultSet rs2 = SQLHandler.getResultSet("SELECT `Kontostand` FROM `Accounts` WHERE `ID`='"+targetID+"'");
             try {
                 rs2.next();
-                targetBalance = rs2.getInt("Kontostand");
+                targetBalance = Integer.valueOf(rs2.getString("Kontostand"));
             } catch (SQLException e) {
                 e.printStackTrace();
                 return NetworkResponse.error;
