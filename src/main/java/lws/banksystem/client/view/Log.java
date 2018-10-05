@@ -5,7 +5,6 @@ import lws.banksystem.client.model.UiContainer;
 import lws.banksystem.client.network.Network;
 
 import javax.swing.*;
-import javax.swing.text.Document;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
