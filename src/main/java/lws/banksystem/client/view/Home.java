@@ -97,6 +97,8 @@ public class Home implements View, ActionListener {
         if(ae.getSource()==this.ui.get("logout").getComponent()){
             Network.logout();
             Window.getInstance().applyView(new Login(callBack));
+        }if(ae.getSource()== this.ui.get("history-button").getComponent()) {
+            Window.getInstance().applyView(new Log(callBack));
         }
 
     }

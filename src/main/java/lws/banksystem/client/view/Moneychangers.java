@@ -107,7 +107,7 @@ import java.util.function.BiConsumer;
                     System.out.println("jetzt kommt getmoney: "+textField2.getText());
                 Network.getMoney(textField2.getText());
             }
-
+                Window.getInstance().applyView(new Moneychangers(callBack));
             }
         }
     }

@@ -24,7 +24,7 @@ public class Login implements View, ActionListener {
         ui.put("id", new UiContainer(new JTextField(), 1, 0));
 
         ui.put("password-label", new UiContainer(new JLabel("Passwort:"), 0, 1));
-        ui.put("password", new UiContainer(new JTextField(), 1, 1));
+        ui.put("password", new UiContainer(new JPasswordField(), 1, 1));
 
         JButton regist = new JButton("Registrieren");
         regist.addActionListener(this);

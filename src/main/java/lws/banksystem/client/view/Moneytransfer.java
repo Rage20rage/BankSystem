@@ -75,8 +75,7 @@ import java.util.function.BiConsumer;
                 Network.sendMoney(tf_target.getText() ,tf_amount.getText());
                 System.out.println("geht");
 
-
-
+                Window.getInstance().applyView(new Moneytransfer(callBack));
 
                 //dann geld über / einzahlen funktion
             }
